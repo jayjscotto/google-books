@@ -17,6 +17,12 @@ class Search extends React. Component {
           <input className='search-input' type='text' name='search' value={this.state.value} />
           <Button value={this.value}/>
         </div>
+        <hr/>
+        <div className="add-container">
+        <h3 className='hero-text'>Find Your Book:</h3>
+          <input className='search-input' type='text' name='search' value={this.state.value} />
+          <Button value={this.value}/>
+        </div>
       </div>
     );
   }

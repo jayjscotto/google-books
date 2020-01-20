@@ -1,6 +1,5 @@
 const express = require('express');
 const favicon = require('express-favicon');
-const path = require('path');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 8080;
 const app = express();
@@ -16,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/mern",
+  process.env.MONGODB_URI || "mongodb://localhost/google-books",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
