@@ -20,9 +20,4 @@ export default {
   deleteBook: id => {
     return axios.delete('/api/book/:id');
   },
-  searchGoogleBooks: query => {
-    return axios.get('/api/search-books/', {
-      query: query
-    });
-  }
 };

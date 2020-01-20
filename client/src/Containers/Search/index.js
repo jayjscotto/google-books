@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../Components/Button';
 import './search.css'
-import API from '../../Utils/localBooks'
+import API from '../../Utils/externalBooks'
 
 class Search extends React.Component {
   state = {
