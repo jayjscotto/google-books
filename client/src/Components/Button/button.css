@@ -1,0 +1,13 @@
+.button {
+    margin: 0.5em 1em;
+    padding: 0.15em 0.75em;
+    border-radius: 5px;
+    background-color: var(--clr-light);
+    border: none;
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
