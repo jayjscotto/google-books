@@ -1,0 +1,35 @@
+{
+  "name": "google-books",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "dot-env": "0.0.1",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.8.9",
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayjscotto/google-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayjscotto/google-books/issues"
+  },
+  "homepage": "https://github.com/jayjscotto/google-books#readme"
+}

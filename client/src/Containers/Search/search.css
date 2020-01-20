@@ -1,6 +1,16 @@
+
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
 input {
     border: 1px solid rgb(138, 136, 136);
     border-radius: 5px;
     font-size: 0.75em;
-    padding: 0.25em;
+    padding: 0.45em;
+    margin: 1em;
 }
