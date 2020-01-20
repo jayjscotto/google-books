@@ -11,6 +11,9 @@ export default {
      getBook: id => {
         return axios.get('/api/books/:id');
      },
+     saveBook: id => {
+         return axios.post('/api/save-book/')
+     },
      updateBook: id => {
          return axios.put('/api/book/:id');
      },

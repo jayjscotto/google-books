@@ -26,6 +26,7 @@ mongoose.connect(
 app.use(routes);
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
+
 app.listen(port, () => {
   console.log(`Sever listening on ${port}`);
 });
