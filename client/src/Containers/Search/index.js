@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../Components/Button';
 import './search.css'
 
-class Search extends React. Component {
+class Search extends React.Component {
   state = {
       search: ''
   };
