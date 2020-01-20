@@ -34,5 +34,6 @@ module.exports = {
       .then(removed => res.json(removed))
       // send Unprocessable Entity error if error
       .catch(err => res.status(422).json(err));
-  }
+  },
+
 };
