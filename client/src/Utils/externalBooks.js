@@ -5,7 +5,7 @@ import axios from 'axios';
 export default {
   // Get all books
   searchGoogleBooks: query => {
-    return axiox.get('/search-books/', {
+    return axios.get('/api/search-books/', {
       query: query
     });
   }
