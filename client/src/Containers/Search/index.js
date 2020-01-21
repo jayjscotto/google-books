@@ -1,16 +1,31 @@
 import React from 'react';
 import Button from '../../Components/Button';
+import SearchResults from '../../Containers/SearchResults';
 import './search.css'
 import API from '../../Utils/externalBooks'
 
 class Search extends React.Component {
   state = {
-      value: ''
+      value: '',
+      searchBooks: [],
+
   };
 
   googleSearch = (searchTerm) => {
     API.searchGoogleBooks(searchTerm)
-    .then(response => console.log(response));
+    .then(response => {
+      const books = response.data.items;
+      books.map(book => {
+        const searchBook = {
+          title: book.volumeInfo.title,
+          authors: book.volumeInfo.authors,
+          description: book.volumeInfo.description,
+          image: book.volumeInfo.imageLinks.thumbnail,
+          link: book.volumeInfo.infoLink
+        }
+        console.log(searchBook);
+      })
+    });
     this.setState({value: ''});
   }
 
@@ -34,6 +49,7 @@ class Search extends React.Component {
     
           <Button value={this.value}/>
         </div>
+        <SearchResults books={this.state.searchBooks}/>
       </div>
     );
   }

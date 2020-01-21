@@ -6,14 +6,12 @@ const axios = require('axios');
 router.use('/api', APIroutes);
 
 router.get('/search-books/:book', (req, res) => {
-  const query = `https://www.googleapis.com/books/v1/volumes?q=${req.body.query}&key=${process.env.API_KEY}`;
-  console.log(req.params);    
+  const query = `https://www.googleapis.com/books/v1/volumes?q=${req.params.book}&key=${process.env.API_KEY}`;
   // take search params and send data to front end in JSON from google books API
   axios
     .get(query)
     .then(response =>{
-      console.log(response) 
-      return res.json(response)
+      return res.json(response.data)
     })
     .catch(err => res.status(418).send);
 });

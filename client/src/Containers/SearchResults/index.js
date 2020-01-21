@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class SearchResults extends Component {
+class SearchResults extends React.Component {
     render() {
         return (
             <h1>Search Results</h1>
