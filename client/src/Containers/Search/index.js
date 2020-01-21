@@ -92,10 +92,9 @@ class Search extends React.Component {
                     </div>
               
                   <div className='book-buttons'>
-                    <Button
+                    <a href={book.canonicalVolumeLink}><Button
                       value='Check Out This Book'
-                      href={book.canonicalVolumeLink}
-                    />
+                    /></a>
                     <Button
                       value='Save This Book'
                       onClick={() => {
