@@ -72,25 +72,34 @@ class Search extends React.Component {
             />
           </div>
         </div>
-        <div className='results card'>
-          {this.state.searchedBooks.length !== 0 ? (
-            <Results>
-              {this.state.searchedBooks.map(book => {
-                return (
-                  <BookCard key={book.industryIdentifiers[0].identifier}>
-                    <div className="bookImage"><img src={book.imageLinks.smallThumbnail} alt="book-image"/></div>
-                    <div className='title'>{book.title}</div>
-                    <div className='authors'>{book.authors}</div>
-                    <div className='description'>{book.description}</div>
+
+        {this.state.searchedBooks.length !== 0 ? (
+          <Results>
+            {this.state.searchedBooks.map(book => {
+              return (
+                <BookCard key={book.industryIdentifiers[0].identifier}>
+                    <div className='bookImage'>
+                      <img
+                        src={book.imageLinks.smallThumbnail}
+                        alt='book-image'
+                      />
+                    </div>
+                    <div className='book-info'>
+                      <div className='title'>{book.title}</div>
+                      <div className='authors'>{book.authors}</div>
+                      <div className='description'>{book.description}</div>
+                    </div>
                     <a href={book.canonicalVolumeLink}>Check out the book!</a>
-                  </BookCard>
-                );
-              })}
-            </Results>
-          ) : (
-            <h2 className="no-search">Search for a book!</h2>
-          )}
-        </div>
+            
+                </BookCard>
+              );
+            })}
+          </Results>
+        ) : (
+          <div className='results card'>
+            <h1 className='no-search'>Search for a book above!</h1>
+          </div>
+        )}
       </div>
     );
   }

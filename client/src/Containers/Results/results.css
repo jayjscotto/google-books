@@ -8,6 +8,7 @@
 
 li {
     margin: 0 auto;
-    width: 75%;
+    list-style: none;
+
 }
 

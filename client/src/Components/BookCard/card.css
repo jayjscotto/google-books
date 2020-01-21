@@ -1,20 +1,16 @@
 .card {
-    margin: 0 auto;
-    border: none;
-    max-width: 80%;
-    border-radius: 10px;
-    margin-bottom: 2em;
-    text-align: center;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-  }
-
-
-.card-body {
-    padding: 0.5em;
+  margin: 0 auto;
+  border: none;
+  max-width: 80%;
+  border-radius: 10px;
 }
 
-  .card-title {
-    text-transform: uppercase;
-    margin: 0.5em auto;
-    font-size: 2em;
-  }
+.card-body {
+  padding: 0.5em;
+}
+
+.card-title {
+  text-transform: uppercase;
+  margin: 0.5em auto;
+  font-size: 2em;
+}
