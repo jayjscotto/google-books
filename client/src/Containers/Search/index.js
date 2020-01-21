@@ -49,8 +49,6 @@ class Search extends React.Component {
     return this.setState({ value: e.target.value });
   };
 
-  buttonValue = 'Search';
-
   render() {
     return (
       <div className='search'>
@@ -65,7 +63,7 @@ class Search extends React.Component {
               onChange={this.handleChange}
             />
             <Button
-              value={this.buttonValue}
+              value='Search'
               onClick={() => {
                 this.googleSearch(this.state.value);
               }}
@@ -78,19 +76,33 @@ class Search extends React.Component {
             {this.state.searchedBooks.map(book => {
               return (
                 <BookCard key={book.industryIdentifiers[0].identifier}>
-                    <div className='bookImage'>
-                      <img
-                        src={book.imageLinks.smallThumbnail}
-                        alt='book-image'
-                      />
-                    </div>
+                  <div className="title-author">
+                    <div className='results-card-title'>{book.title}</div>
+                    <h2 className='authors'>By: {book.authors[0]}</h2>
+                  </div>
+                   
                     <div className='book-info'>
-                      <div className='title'>{book.title}</div>
-                      <div className='authors'>{book.authors}</div>
+                      <div className='bookImage'>
+                        <img
+                          src={book.imageLinks.smallThumbnail}
+                          alt='book-image'
+                        />
+                      </div>
                       <div className='description'>{book.description}</div>
                     </div>
-                    <a href={book.canonicalVolumeLink}>Check out the book!</a>
-            
+              
+                  <div className='book-buttons'>
+                    <Button
+                      value='Check Out This Book'
+                      href={book.canonicalVolumeLink}
+                    />
+                    <Button
+                      value='Save This Book'
+                      onClick={() => {
+                        console.log('add in the save book function')
+                      }}
+                    />
+                  </div>
                 </BookCard>
               );
             })}

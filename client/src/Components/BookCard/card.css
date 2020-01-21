@@ -4,12 +4,7 @@
   max-width: 80%;
   border-radius: 10px;
   margin-bottom: 2em;
-  text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-}
-
-.card-body {
-  padding: 0.5em;
 }
 
 .card-title {
@@ -17,3 +12,41 @@
   margin: 0.5em auto;
   font-size: 2em;
 }
+
+.card-body {
+  padding: .5em;
+}
+
+.results-card-title {
+  font-size: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.results-card-body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5em;
+}
+
+
+.title-author {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.authors {
+  font-size: 1.5em;
+}
+
+.description {
+  padding: 1em;
+  text-align: justify;
+}
+

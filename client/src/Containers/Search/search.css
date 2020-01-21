@@ -17,4 +17,12 @@
 
 .no-search { 
     padding-top: 2em;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+img {
+    width: 175px;
+    height: auto;
 }
