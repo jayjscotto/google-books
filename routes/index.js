@@ -12,8 +12,8 @@ router.get('/search-books/:book', (req, res) => {
   axios
     .get(query)
     .then(response => {
-      const books = response.data.items.map(({volumeInfo}) => volumeInfo);
-      res.json(books)
+      const books = response.data.items.map(book => {return (book.id && book.volumeInfo)});
+      res.json(books);
     })
     .catch(err => res.status(418).send);
 });

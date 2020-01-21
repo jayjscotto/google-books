@@ -17,7 +17,12 @@
     text-decoration: none;
   }
   
-  li:hover {
-    color: var(--clr-light);
-    cursor: pointer;
-  }
+
+  
+  input {
+    border: 1px solid rgb(138, 136, 136);
+    border-radius: 5px;
+    font-size: 0.75em;
+    padding: 0.45em;
+    margin: 1em;
+}

@@ -8,10 +8,10 @@ const Nav = () => {
         Google Books<span className="cyan">.</span>
       </h3>
       <ul>
-        <li>
+        <li className="nav-list">
           <a href='/'>Home</a>
         </li>
-        <li>
+        <li className="nav-list">
           <a href='/saved'>Saved</a>
         </li>
       </ul>

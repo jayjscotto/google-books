@@ -1,0 +1,13 @@
+.result-list {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 10%;
+}
+
+li {
+    margin: 0 auto;
+    width: 75%;
+}
+

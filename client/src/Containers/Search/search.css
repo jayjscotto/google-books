@@ -7,10 +7,16 @@
     padding: 1em;
 }
 
-input {
-    border: 1px solid rgb(138, 136, 136);
-    border-radius: 5px;
-    font-size: 0.75em;
-    padding: 0.45em;
-    margin: 1em;
+.results {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.no-search { 
+    padding-top: 2em;
+}
+
+
+.results {
+    min-height: 300px;
 }
