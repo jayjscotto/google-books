@@ -3,12 +3,24 @@ import Button from '../../Components/Button';
 import './card.css';
 
 const BookCard = (props) => {
+
+  const showAuthor = (authors) => {
+    console.log(authors)
+    
+  }
+
   return (
     <li>
       <div className='card'>
         <div className='title-author'>
           <div className='results-card-title'>{props.title}</div>
-          <h2 className='authors'>By: {props.author}</h2>
+          <h2 className='authors'> By: 
+          { props.author.length > 1 ? (
+              props.author.join(', ')
+          ) : (
+              props.author)
+            }
+          </h2>
         </div>
 
         <div className='book-info'>
