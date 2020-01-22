@@ -4,6 +4,7 @@ import BookCard from '../../Components/BookCard';
 import Results from '../../Containers/Results';
 import './search.css';
 import API from '../../Utils/externalBooks';
+import localAPI from '../../Utils/localBooks';
 
 class Search extends React.Component {
   state = {
@@ -21,6 +22,10 @@ class Search extends React.Component {
       .then(() => this.printBooks());
     return this.setState({ value: '' });
   };
+
+  saveBook = book => {
+    localAPI.saveBook(this.state.searchedBooks[book]);
+  }
 
   // componentDidUpdate = () => {
   //   this.printBooks();
@@ -73,9 +78,9 @@ class Search extends React.Component {
 
         {this.state.searchedBooks.length !== 0 ? (
           <Results>
-            {this.state.searchedBooks.map(book => {
+            {this.state.searchedBooks.map((book, index)=> {
               return (
-                <BookCard key={book.industryIdentifiers[0].identifier}>
+                <BookCard key={index}>
                   <div className="title-author">
                     <div className='results-card-title'>{book.title}</div>
                     <h2 className='authors'>By: {book.authors[0]}</h2>
@@ -117,12 +122,3 @@ class Search extends React.Component {
 }
 
 export default Search;
-
-// <BookCard
-// key={}
-// title={book.title}
-// authors={book.authors}
-// description={book.description}
-// image={book.imageLinks.smallThumbnail}
-// link=
-// />

@@ -11,11 +11,10 @@ export default {
   getBook: id => {
     return axios.get('/api/books/:id');
   },
-  saveBook: id => {
-    return axios.post('/api/save-book/');
-  },
-  updateBook: id => {
-    return axios.put('/api/book/:id');
+  saveBook: book => {
+    return axios.post('/api/save-book/', {
+      book: book
+    });
   },
   deleteBook: id => {
     return axios.delete('/api/book/:id');

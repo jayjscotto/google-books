@@ -10,7 +10,9 @@ function App() {
     <Router>
       <div className='App'>
         <Nav />
+        
       </div>
+    
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/saved' component={Saved}/>
