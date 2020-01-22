@@ -3,12 +3,6 @@ import Button from '../../Components/Button';
 import './card.css';
 
 const BookCard = (props) => {
-
-  const showAuthor = (authors) => {
-    console.log(authors)
-    
-  }
-
   return (
     <li>
       <div className='card'>
@@ -25,7 +19,7 @@ const BookCard = (props) => {
 
         <div className='book-info'>
           <div className='bookImage'>
-            <img src={props.image} alt='book-image' />
+            <img src={props.image} alt={props.alt} />
           </div>
           <div className='description'>{props.description}</div>
         </div>
@@ -35,9 +29,9 @@ const BookCard = (props) => {
             <Button value='Check Out This Book' />
           </a>
           <Button
-            value='Save This Book'
+            value={props.buttonValue}
             onClick={() => {
-              console.log('add in the save book function');
+              props.saveBook(props.index);
             }}
           />
         </div>

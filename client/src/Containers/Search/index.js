@@ -59,11 +59,15 @@ class Search extends React.Component {
               return (
                 <BookCard
                   key={index}
+                  index={index}
+                  alt={`book-${index}`}
                   title={book.title}
                   author={book.authors}
                   image={book.imageLinks.smallThumbnail}
                   description={book.description}
                   link={book.canonicalVolumeLink}
+                  buttonValue='Save This Book'
+                  saveBook={this.saveBook}
                 ></BookCard>
               );
             })}

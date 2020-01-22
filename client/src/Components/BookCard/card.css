@@ -1,7 +1,8 @@
 .card {
   margin: 0 auto;
+  padding: 1em;
   border: none;
-  max-width: 80%;
+  width: 80%;
   border-radius: 10px;
   margin-bottom: 2em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
@@ -31,9 +32,8 @@
 .book-info {
   display: flex;
   flex-direction: row;
-  padding: 1.5em;
+  padding: 1em;
 }
-
 
 .title-author {
   display: flex;
@@ -42,11 +42,12 @@
 }
 
 .authors {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .description {
-  padding: 1em;
+  padding: 1.5em;
   text-align: justify;
 }
+
 

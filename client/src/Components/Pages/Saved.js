@@ -1,54 +1,42 @@
 import React from 'react';
 import Hero from '../Hero';
 import BookCard from '../../Components/BookCard';
-import Button from '../../Components/Button'
 import Results from '../../Containers/Results';
-import localAPI from '../../Utils/localBooks'
+import localAPI from '../../Utils/localBooks';
 
 class Saved extends React.Component {
-    state = {
-        savedBooks: localAPI.getAllBooks()
-    }
+  state = {
+    savedBooks: localAPI.getAllBooks()
+  };
 
-    //// TODO
-    // ITERATE over book object in DB
-    // use correct object properties for each book
+  //componentWillMount or componentDidMount
+  //search DB , set the state of savedBooks
+  //iterate over the state array and print the books
+  //conditonally render the BookCard for that book
+  // OR
+  // loading gif
+
+  //// TODO
+  // ITERATE over book object in DB
+  // use correct object properties for each book
   render() {
     return (
       <div className='home'>
         <Hero />
         {this.state.savedBooks.length !== 0 ? (
           <Results>
-            {this.state.savedBooks.map((book, index)=> {
+            {this.state.savedBooks.map((book, index) => {
               return (
-                <BookCard key={index}>
-                  <div className="title-author">
-                    <div className='results-card-title'>{book.title}</div>
-                    <h2 className='authors'>By: {book.authors[0]}</h2>
-                  </div>
-                   
-                    <div className='book-info'>
-                      <div className='bookImage'>
-                        <img
-                          src={book.imageLinks.smallThumbnail}
-                          alt='book-image'
-                        />
-                      </div>
-                      <div className='description'>{book.description}</div>
-                    </div>
-              
-                  <div className='book-buttons'>
-                    <a href={book.canonicalVolumeLink}><Button
-                      value='Check Out This Book'
-                    /></a>
-                    <Button
-                      value='Save This Book'
-                      onClick={() => {
-                        console.log('add in the save book function')
-                      }}
-                    />
-                  </div>
-                </BookCard>
+                <BookCard
+                  key={index}
+                  alt={`book-${index}`}
+                  title={book.title}
+                  author={book.authors}
+                  image={book.imageLinks.smallThumbnail}
+                  description={book.description}
+                  link={book.canonicalVolumeLink}
+                  buttonValue='Delete This Book!'
+                />
               );
             })}
           </Results>
