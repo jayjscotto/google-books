@@ -19,35 +19,12 @@ class Search extends React.Component {
         const searchedBooks = response.data;
         this.setState({ searchedBooks });
       })
-      .then(() => this.printBooks());
+     
     return this.setState({ value: '' });
   };
 
   saveBook = book => {
     localAPI.saveBook(this.state.searchedBooks[book]);
-  }
-
-  // componentDidUpdate = () => {
-  //   this.printBooks();
-  // };
-
-  printBooks = () => {
-    if (this.state.searchedBooks.length !== 0) {
-      this.state.searchedBooks.map(book => {
-        return (
-          <BookCard
-            key={book.industryIdentifiers.identifier}
-            title={book.title}
-            authors={book.authors}
-            description={book.description}
-            image={book.imageLinks.smallThumbnail}
-            link={book.canonicalVolumeLink}
-          />
-        );
-      });
-    } else {
-      return <h2>Search for a book!</h2>;
-    }
   };
 
   handleChange = e => {
@@ -78,36 +55,16 @@ class Search extends React.Component {
 
         {this.state.searchedBooks.length !== 0 ? (
           <Results>
-            {this.state.searchedBooks.map((book, index)=> {
+            {this.state.searchedBooks.map((book, index) => {
               return (
-                <BookCard key={index}>
-                  <div className="title-author">
-                    <div className='results-card-title'>{book.title}</div>
-                    <h2 className='authors'>By: {book.authors[0]}</h2>
-                  </div>
-                   
-                    <div className='book-info'>
-                      <div className='bookImage'>
-                        <img
-                          src={book.imageLinks.smallThumbnail}
-                          alt='book-image'
-                        />
-                      </div>
-                      <div className='description'>{book.description}</div>
-                    </div>
-              
-                  <div className='book-buttons'>
-                    <a href={book.canonicalVolumeLink}><Button
-                      value='Check Out This Book'
-                    /></a>
-                    <Button
-                      value='Save This Book'
-                      onClick={() => {
-                        console.log('add in the save book function')
-                      }}
-                    />
-                  </div>
-                </BookCard>
+                <BookCard
+                  key={index}
+                  title={book.title}
+                  author={book.authors}
+                  image={book.imageLinks.smallThumbnail}
+                  description={book.description}
+                  link={book.canonicalVolumeLink}
+                ></BookCard>
               );
             })}
           </Results>

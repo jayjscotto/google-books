@@ -1,5 +1,7 @@
 import React from 'react';
 import Hero from '../Hero';
+import BookCard from '../../Components/BookCard';
+import Button from '../../Components/Button'
 import Results from '../../Containers/Results';
 import localAPI from '../../Utils/localBooks'
 
