@@ -6,7 +6,7 @@ import localAPI from '../../Utils/localBooks';
 
 class Saved extends React.Component {
   state = {
-    savedBooks: localAPI.getAllBooks()
+    savedBooks: []
   };
 
   //componentWillMount or componentDidMount
@@ -16,6 +16,9 @@ class Saved extends React.Component {
   // OR
   // loading gif
 
+  componentDidMount() {
+    localAPI.getAllBooks();
+  }
   //// TODO
   // ITERATE over book object in DB
   // use correct object properties for each book

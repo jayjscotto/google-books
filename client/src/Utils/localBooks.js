@@ -5,14 +5,15 @@ import axios from 'axios';
 export default {
   // Get all books
   getAllBooks: () => {
-    return axios.get('/api/books');
+    return axios.get('/api/books').then(result => console.log(result));
   },
   // Get all books
   getBook: id => {
     return axios.get('/api/books/:id');
   },
   saveBook: book => {
-    return axios.post('/api/save-book/', {
+    //edit book object to return only what is needed to save in DB
+    return axios.post('/api/books', {
       book: book
     });
   },

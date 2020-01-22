@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 8080;
 const app = express();
 const routes = require('./routes');
+const connection = mongoose.connection;
+
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +24,11 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
+
+connection.once('open', function callback () {
+  console.log('Connected to Mongo!');
+});
+
 
 app.use(routes);
 
