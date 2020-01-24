@@ -26,6 +26,7 @@ class Saved extends React.Component {
     return (
       <div className='home'>
         <Hero />
+        {/* conditionally render saved books */}
         {this.state.savedBooks.length !== 0 ? (
           <Results>
             {this.state.savedBooks.map((book, index) => {

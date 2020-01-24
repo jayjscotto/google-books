@@ -19,7 +19,8 @@ module.exports = {
   },
   create: (req, res) => {
     console.log(req.body.book)
-      db.Book.create(req.body.book)
+    const book = req.body.book
+      db.Book.create( book )
       .then(created => res.json(created))
       // send Unprocessable Entity error if error
       .catch(err => res.status(422).json(err));

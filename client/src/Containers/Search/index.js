@@ -12,6 +12,7 @@ class Search extends React.Component {
     searchedBooks: []
   };
 
+  // send search param to router to then search google book API
   googleSearch = searchTerm => {
     console.log('hello')
     API.searchGoogleBooks(searchTerm)
@@ -24,6 +25,7 @@ class Search extends React.Component {
     return this.setState({ value: '' });
   };
 
+  // save book to DB
   saveBook = book => {
     console.log(book);
     localAPI.saveBook({
@@ -35,6 +37,7 @@ class Search extends React.Component {
     });
   };
 
+  // keep track of input state change
   handleChange = e => {
     return this.setState({ value: e.target.value });
   };
@@ -60,7 +63,7 @@ class Search extends React.Component {
             />
           </div>
         </div>
-
+        {/* conditionally render book search results */}
         {this.state.searchedBooks.length !== 0 ? (
           <Results>
             {this.state.searchedBooks.map((book, index) => {
