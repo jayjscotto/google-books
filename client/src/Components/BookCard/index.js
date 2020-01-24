@@ -31,7 +31,7 @@ const BookCard = (props) => {
           <Button
             value={props.buttonValue}
             onClick={() => {
-              props.saveBook(props.index);
+              props.saveBook({...props});
             }}
           />
         </div>

@@ -1,4 +1,5 @@
 const db = require('../models');
+console.log(db.Book);
 
 //controller methods:
 module.exports = {
@@ -17,8 +18,8 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
-    console.log(req.body)
-      db.Book.create(req.body)
+    console.log(req.body.book)
+      db.Book.create(req.body.book)
       .then(created => res.json(created))
       // send Unprocessable Entity error if error
       .catch(err => res.status(422).json(err));

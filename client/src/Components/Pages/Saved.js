@@ -35,9 +35,9 @@ class Saved extends React.Component {
                   alt={`book-${index}`}
                   title={book.title}
                   author={book.authors}
-                  image={book.imageLinks.smallThumbnail}
+                  image={book.image}
                   description={book.description}
-                  link={book.canonicalVolumeLink}
+                  link={book.link}
                   buttonValue='Delete This Book!'
                 />
               );

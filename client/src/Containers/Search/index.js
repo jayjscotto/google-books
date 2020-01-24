@@ -13,6 +13,7 @@ class Search extends React.Component {
   };
 
   googleSearch = searchTerm => {
+    console.log('hello')
     API.searchGoogleBooks(searchTerm)
       .then(response => {
         console.log(response);
@@ -24,7 +25,14 @@ class Search extends React.Component {
   };
 
   saveBook = book => {
-    localAPI.saveBook(this.state.searchedBooks[book]);
+    console.log(book);
+    localAPI.saveBook({
+      title: book.title,
+      authors: [...book.author],
+      description: book.description,
+      image: book.image,
+      link: book.link
+    });
   };
 
   handleChange = e => {
@@ -62,7 +70,7 @@ class Search extends React.Component {
                   index={index}
                   alt={`book-${index}`}
                   title={book.title}
-                  author={book.authors}
+                  author={[...book.authors]}
                   image={book.imageLinks.smallThumbnail}
                   description={book.description}
                   link={book.canonicalVolumeLink}
