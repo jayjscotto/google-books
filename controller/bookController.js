@@ -1,5 +1,5 @@
 const db = require('../models');
-console.log(db.Book);
+
 
 //controller methods:
 module.exports = {
@@ -18,7 +18,6 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
-    console.log(req.body.book)
     const book = req.body.book
       db.Book.create( book )
       .then(created => res.json(created))

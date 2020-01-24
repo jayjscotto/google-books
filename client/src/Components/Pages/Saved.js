@@ -9,19 +9,15 @@ class Saved extends React.Component {
     savedBooks: []
   };
 
-  //componentWillMount or componentDidMount
-  //search DB , set the state of savedBooks
-  //iterate over the state array and print the books
-  //conditonally render the BookCard for that book
-  // OR
-  // loading gif
-
+  // when the component mounts, query the DB for all saved books
+  // then update the state
+  // component will rerender with saved books
   componentDidMount() {
-    localAPI.getAllBooks();
+    localAPI
+      .getAllBooks()
+      .then(books => this.setState({ savedBooks: books.data }));
   }
-  //// TODO
-  // ITERATE over book object in DB
-  // use correct object properties for each book
+
   render() {
     return (
       <div className='home'>
@@ -46,7 +42,7 @@ class Saved extends React.Component {
           </Results>
         ) : (
           <div className='results card'>
-            <h1 className='no-search'>Search for a book above!</h1>
+            <h1 className='no-search'>No Saved Books yet!</h1>
           </div>
         )}
       </div>
