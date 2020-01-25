@@ -27,7 +27,7 @@ mongoose.connect(
 );
 
 connection.once('open', function callback () {
-  console.log('Connected to Mongo!');
+  console.log('Connected to MongoDB!');
 });
 
 

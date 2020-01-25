@@ -16,7 +16,6 @@ class Search extends React.Component {
   googleSearch = searchTerm => {
     API.searchGoogleBooks(searchTerm)
       .then(response => {
-        console.log(response);
         const searchedBooks = response.data;
         this.setState({ searchedBooks });
       })
@@ -26,7 +25,7 @@ class Search extends React.Component {
 
   // save book to DB
   saveBook = book => {
-    console.log(book);
+
     localAPI.saveBook({
       title: book.title,
       authors: [...book.author],

@@ -9,11 +9,9 @@ router.use('/api', APIroutes);
 router.get('/search-books/:book', (req, res) => {
   const query = `https://www.googleapis.com/books/v1/volumes?q=${req.params.book}&key=${process.env.API_KEY}`;
   // take search params and send data to front end in JSON from google books API
-  console.log(query)
   axios
     .get(query)
     .then(response => {
-      console.log(response)
       const books = response.data.items.map(book => {return (book.id && book.volumeInfo)});
       res.json(books);
     })
