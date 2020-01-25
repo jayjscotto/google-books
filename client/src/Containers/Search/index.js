@@ -14,7 +14,6 @@ class Search extends React.Component {
 
   // send search param to router to then search google book API
   googleSearch = searchTerm => {
-    console.log('hello')
     API.searchGoogleBooks(searchTerm)
       .then(response => {
         console.log(response);
